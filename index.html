@@ -89,6 +89,13 @@
         document.getElementById("demo-form").submit();
       }
     </script>
+    <script>
+      if (g-recaptcha.getResponse() == ""){
+        alert("You can't proceed!");
+      } else {
+        alert("Thank you");
+      }
+    </script>
     <script src="scripts/jquery.slim.min.js?ver=1.2.0"></script>
     <script src="scripts/bootstrap.bundle.min.js?ver=1.2.0"></script>
     <script src="scripts/main.js?ver=1.2.0"></script>
