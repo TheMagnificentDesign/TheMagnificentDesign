@@ -68,11 +68,11 @@
                   <input type="text" name="EMAIL" class="form-control" id="recipient-email" placeholder="name@example.com" required>
                   <label for="recipient-email" class="form-control-label" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">Enter you e-mail</label>
                 </div> 
-                <div class="g-recaptcha" data-sitekey="6LetNqEhAAAAABjv08HRYgidCnthVACNfx_Qe5HP"></div>
+                <div class="g-recaptcha" data-sitekey="6LetNqEhAAAAABjv08HRYgidCnthVACNfx_Qe5HP" data-callback="recaptcha_callback" data-theme="dark"></div>
 
     
                 <div class="modal-footer">
-                  <button type="submit" class="btn btn-default">Subscribe</button>
+                  <button class="submit-btn" type="submit" class="btn btn-default" disabled>Subscribe</button>
                 </div>
               </form>
             </div>
@@ -90,10 +90,10 @@
       }
     </script>
     <script>
-      if (g-recaptcha.getResponse() == ""){
-        alert("You can't proceed!");
-      } else {
-        alert("Thank you");
+      function recaptcha_callback() {
+        var submitBtn = document.querySelector('#submit-btn');
+        submitBtn.removeAttribute('disabled');
+        submitBtn.style.cursor('pointer');
       }
     </script>
     <script src="scripts/jquery.slim.min.js?ver=1.2.0"></script>
