@@ -13,6 +13,9 @@ a:hover {
 .instagram:hover {
   color: #FCAF45;
 }
+.twitter:hover {
+  color: #1DA1F2;
+}
 /* Custom default button */
 .btn-default {
   color: #fff;
